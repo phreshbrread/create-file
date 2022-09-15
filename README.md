@@ -1,2 +1,4 @@
 # create-file
-Rewrite of CreateFile
+Small command line program to creat dummy files of a specified size
+
+Usage: create-file [size] [unit] [path/filename]

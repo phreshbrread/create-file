@@ -8,7 +8,7 @@ namespace create_file
 
         static void InvalidUsage()
         {
-            Console.WriteLine("Usage: create [size] [unit] [path/filename]");
+            Console.WriteLine("Usage: create-file [size] [unit] [path/filename]");
         }
         static void Main(string[] args)
         {
