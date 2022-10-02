@@ -1,1 +1,3 @@
-dotnet build --configuration release --runtime win-x64 --no-self-contained
+#!/bin/bash
+
+dotnet publish --configuration Release --runtime win-x64 --no-self-contained /p:PublishSingleFile=true
