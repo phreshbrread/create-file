@@ -16,7 +16,7 @@ long.TryParse(args[0], out size);
 string unit = args[1].ToLower();
 string path = args[2];
 
-Console.WriteLine("{0} {1} {2}", size, unit, path);
+Console.WriteLine("Created {0}{1} file at {2}", size, unit.ToUpper(), path);
 
 switch (unit)
 {
