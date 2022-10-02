@@ -16,7 +16,7 @@ long.TryParse(args[0], out size);
 string unit = args[1].ToLower();
 string path = args[2];
 
-Console.WriteLine(size + " " + unit + " " + path);
+Console.WriteLine("{0} {1} {2}", size, unit, path);
 
 switch (unit)
 {
