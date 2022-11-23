@@ -3,4 +3,4 @@ Small command line program to creat dummy files of a specified size
 
 Usage: create-file [size] [unit] [path/filename]
 
-Build with dotnet or using included build scripts
+Build with dotnet
