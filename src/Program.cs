@@ -12,32 +12,42 @@ if (args.Length != 3)
 }
 
 long size;
-long.TryParse(args[0], out size);
+try
+{
+    size = long.Parse(args[0]);
+}
+catch (FormatException)
+{
+    InvalidUsage();
+    return;
+}
+
+long displaySize = size;
 string unit = args[1].ToLower();
 string path = args[2];
-
-Console.WriteLine("Created {0}{1} file at {2}", size, unit.ToUpper(), path);
 
 switch (unit)
 {
     case "b":
         break;
     case "kb":
-        size = size * 1024;
+        size *= 1024;
         break;
     case "mb":
-        size = size * 1048576;
+        size *= 1048576;
         break;
     case "gb":
-        size = size * 1073741824;
+        size *= 1073741824;
         break;
     case "tb":
-        size = size * 1099511627776;
+        size *= 1099511627776;
         break;
     default:
         InvalidUsage();
-        break;
+        return;
 }
 
 var fileStream = new FileStream(path, FileMode.Create, FileAccess.ReadWrite, FileShare.None);
 fileStream.SetLength(size);
+
+Console.WriteLine("Created {0}{1} file at {2}", displaySize, unit, path);
